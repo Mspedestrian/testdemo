@@ -1,0 +1,18 @@
+.loginform{
+	width:400px;  
+   height:300px;  
+   position:absolute;  
+   left:50%;  
+   top:50%;  
+   margin:-100px 0 0 -150px ;
+   background-color: #aaa;
+   opacity:0.6;
+   padding-top:80px;
+   padding-left: 30px;
+   padding-right:30px;
+   border-radius: 10px;
+   transition: opacity 2s;
+}
+.loginform:hover{
+	opacity: 1;
+}
