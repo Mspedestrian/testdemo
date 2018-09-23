@@ -30,7 +30,6 @@ class AddProduct extends React.Component {
       , data: JSON.stringify(params)
       , success:function(res){
         var productid=res.data.id;
-        console.log(productid);
         window.location.hash = "/next/"+productid;
       }
     });

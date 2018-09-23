@@ -13,6 +13,7 @@ class ProductList extends React.Component {
     dataIndex: 'id',
     key:'id',
     width: '20%',
+    sorter: (a, b) => a.id - b.id,
     }, {
     title: '标题',
     dataIndex: 'name',
@@ -24,6 +25,7 @@ class ProductList extends React.Component {
     }, {
     title: '创建时间',
     dataIndex: 'createTime',
+    sorter: (a, b) => a.createTime - b.createTime,
     },{
       title: '操作',
       key: 'operation',

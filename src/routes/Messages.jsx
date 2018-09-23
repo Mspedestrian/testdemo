@@ -15,8 +15,7 @@ function Messages() {
 
   return (
     <div>
-      <MessageSearch {...messageSearchProps}/>
-      {/* 用户信息展示列表 */}
+      
       <MessageList />
     </div>
   );

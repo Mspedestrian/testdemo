@@ -16,25 +16,31 @@ class ProductList extends React.Component {
     }, {
     title: '名称',
     dataIndex: 'name',
-  
+    key:"name",
     width: '20%',
     }, {
     title: '价格',
     dataIndex: 'price',
+    key:"price",
     sorter: (a, b) => a.price - b.price,
     }, {
     title: '库存',
     dataIndex: 'num',
+    key:"num",
     }, {
     title: '分类',
     dataIndex: 'type',
+    key:'type',
     filters: [
-      { text: 1, value: 'test1'},
-      { text: 2, value: 'test2'},
+      { text: 1, value: "1"},
+      
     ],
     onFilter: (value, record) => {
-      record.name.indexOf(value) == value;
-      console.log(record.name);
+      // record.name.indexOf(value) ===0;
+      
+      var ss=parseInt(value);
+      record.type===1;
+      
     },
     },{
       title: '操作',
@@ -69,7 +75,7 @@ class ProductList extends React.Component {
       loading: false,
     }
   }
-  handleTableChange = (pagination, filters) => {
+  handleTableChange = (pagination) => {
     const pager = { ...this.state.pagination };
     pager.current = pagination.current;
     this.setState({
@@ -78,7 +84,6 @@ class ProductList extends React.Component {
     this.fetch({
       results: pagination.pageSize,
       page: pagination.current,
-      ...filters,
     });
   }
   onDelete = (index) => {

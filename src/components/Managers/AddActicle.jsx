@@ -13,7 +13,6 @@ class AddActitle extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
         this.fetch(values);
       }
     });
@@ -26,7 +25,18 @@ class AddActitle extends React.Component {
       , contentType: 'application/json;charset=utf-8'
       , data: JSON.stringify(params)
       , success:function(res){
-        console.log(res);
+        if(res.code=="001"){
+          alert("添加成功");
+          window.location.hash = "/showmessages";
+        }
+        else {
+          alert("添加失败");
+          window.location.hash = "/addacticle";
+        }
+      }
+      ,fail:function(res){
+        alert("添加失败");
+          window.location.hash = "/addacticle";
       }
     })
   }

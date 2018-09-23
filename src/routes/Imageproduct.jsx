@@ -17,28 +17,9 @@ class Imageproduct extends React.Component {
   
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-        var proid=this.props.params.productid;
-        values.pid=proid;
-        console.log(values.pid);
-        this.fetch(values);
-      }
-    });
+    window.location.hash = "/manager";
   }
-  fetch = (params = {}) => {
-     console.log('params:', params);
-    reqwest({
-      url: 'http://localhost:3000/dist'   
-      , method: 'post'
-      , contentType: 'application/json;charset=utf-8'
-      , data: JSON.stringify(params)
-      , success:function(res){
-        
-      }
-    });
-  }
+  
   
   normFile = (e) => {
     console.log('Upload event:', e);
